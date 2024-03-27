@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Gallery</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<style>
+			body{
+				background-color: lightslategrey;
+			}
+			.big-img{
+				border: 3px solid black;
+				width: 100%;
+
+			}
+			.thumb-area{
+				display: flex;
+			}
+			.thum-img{
+				width: 24%;
+				padding: 0px 5px;
+				margin-top: 20px;
+				cursor: pointer;
+
+			}
+			.small-img{
+				border: 2px solid black;
+				opacity: 0.3;
+				transition: 0.3s;
+
+			}
+			.small-img:hover{
+				opacity: 1;
+			}
+			.thum-img.active{
+				opacity: 1;
+			}
+
+		</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+		
+			<div class="col-md-6 mx-auto">
+				
+				<div class="bigimage">
+					<img src="img\glasses.jpg" class="img-fluid big-img">
+				</div>
+				<div class="thumb-area">
+					<div class="thum-img">
+						<img src="img\bag.png" class=" img-fluid small-img active">
+					</div>
+					<div class="thum-img">
+						<img src="img\menshoes.jpg" class=" img-fluid small-img">
+					</div>
+					<div class="thum-img">
+						<img src="img\necklace.jpg" class=" img-fluid small-img">
+					</div>
+					<div class="thum-img">
+						<img src="img\pendant.jpg" class=" img-fluid small-img">
+					</div>
+				</div>
+				<div class="thumb-area">
+					<div class="thum-img">
+						<img src="img\tshirt.png" class=" img-fluid small-img">
+					</div>
+					<div class="thum-img">
+						<img src="img\watch.jpg" class=" img-fluid small-img">
+					</div>
+					<div class="thum-img">
+						<img src="img\shirt.jpg" class=" img-fluid small-img">
+					</div>
+					<div class="thum-img">
+						<img src="img\glasses.jpg" class=" img-fluid small-img">
+					</div>
+
+			</div>
+		</div>
+	</div>
+	
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+	
+	$(document).ready(function(){
+		$(".small-img").click(function(){
+			$("small-img").removeClass("active")
+			$(this).addClass("active");
+
+			let x = $(this).attr("src");
+			$(".big-img").attr("src",x)
+
+		})
+	})
+</script>
+
+</body>
+</html>
